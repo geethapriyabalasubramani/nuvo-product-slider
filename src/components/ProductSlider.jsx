@@ -57,7 +57,7 @@ const ProductSlider = () => {
 
   if (loading) {
     return (
-      <div className="product-slider">
+      <div className="slider">
         <div className="loading">Loading products...</div>
       </div>
     );
@@ -65,28 +65,28 @@ const ProductSlider = () => {
 
   if (error) {
     return (
-      <div className="product-slider">
+      <div className="slider">
         <div className="error">Error: {error}</div>
       </div>
     );
   }
 
   return (
-    <div className="product-slider">
-      <div className="product-slider__header">
-        <h1 className="product-slider__title">Featured Products</h1>
-        <p className="product-slider__description">
+    <div className="slider">
+      <div className="header">
+        <h1 className="heading">Featured Products</h1>
+        <p className="blurb">
           Discover our carefully curated selection of premium products designed to enhance your lifestyle. 
           Each item is handpicked for its quality, style, and value.
         </p>
       </div>
 
-      <div className="product-slider__content">
-        <div className="product-slider__list">
+      <div className="content">
+        <div className="list">
           {products.map((product, index) => (
             <div
               key={product.id}
-              className={`product-item ${selectedProduct?.id === product.id ? 'active' : ''}`}
+              className={`card ${selectedProduct?.id === product.id ? 'active' : ''}`}
               onClick={() => handleProductSelect(product)}
               role="button"
               tabIndex={0}
@@ -98,22 +98,22 @@ const ProductSlider = () => {
               }}
               aria-label={`Select ${product.title}`}
             >
-              <div className="product-item__image-container">
+              <div className="thumb">
                 <img
                   src={product.image}
                   alt={product.title}
-                  className="product-item__image"
+                  className="img"
                   loading="lazy"
                 />
               </div>
-              <div className="product-item__content">
-                <h3 className="product-item__title">{product.title}</h3>
+              <div className="row">
+                <h3 className="name">{product.title}</h3>
                 <button
-                  className={`product-item__chevron ${selectedProduct?.id === product.id ? 'active' : ''}`}
+                  className={`chevron ${selectedProduct?.id === product.id ? 'active' : ''}`}
                   aria-label={`View details for ${product.title}`}
                 >
                   <span className="material-icons">
-                    {selectedProduct?.id === product.id ? 'keyboard_arrow_down' : 'keyboard_arrow_right'}
+                    {selectedProduct?.id === product.id ? 'chevron_right' : 'chevron_left'}
                   </span>
                 </button>
               </div>
@@ -121,22 +121,22 @@ const ProductSlider = () => {
           ))}
         </div>
 
-        <div className="product-slider__details">
+        <div className="details">
           {selectedProduct && (
-            <div className="product-details">
-              <div className="product-details__price">
+            <div className="panel">
+              <div className="price">
                 ${selectedProduct.price}
               </div>
-              <div className="product-details__description">
+              <div className="desc">
                 {selectedProduct.description}
               </div>
-              <div className="product-details__rating">
-                <div className="rating-stars">
+              <div className="rating">
+                <div className="stars">
                   {renderStars(selectedProduct.rating.rate)}
                 </div>
-                <span className="rating-count">({selectedProduct.rating.count})</span>
+                <span className="count">({selectedProduct.rating.count})</span>
               </div>
-              <button className="product-details__add-to-cart">
+              <button className="cta">
                 Add to Cart
               </button>
             </div>

@@ -4,11 +4,39 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Product Slider</title>
+    <title>Responsive Product Slider | Demo Storefront</title>
+    <meta name="description" content="Responsive, accessible React product slider showcasing items with images, prices, ratings and details. Built with SEO-friendly markup and fast performance." />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#20b2aa" />
+    <meta name="author" content="Demo" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Responsive Product Slider | Demo Storefront" />
+    <meta property="og:description" content="Browse featured products with rich details. Fast, mobile-friendly React demo." />
+    <meta property="og:url" content="/" />
+    <meta property="og:image" content="/vite.svg" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Responsive Product Slider | Demo Storefront" />
+    <meta name="twitter:description" content="Accessible, SEO-ready React product slider with smooth animations." />
+    <meta name="twitter:image" content="/vite.svg" />
+
+    <style>
+      .visually-hidden{position:absolute!important;clip:rect(1px,1px,1px,1px);padding:0;border:0;height:1px;width:1px;overflow:hidden;white-space:nowrap}
+    </style>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   </head>
   <body>
+    <header>
+      <h1 class="visually-hidden">Featured Products</h1>
+      <p class="visually-hidden">Explore our curated collection of items with prices, ratings, and descriptions.</p>
+    </header>
     <div id="root"></div>
+    <footer>
+      <p class="visually-hidden">All product names, descriptions, prices, and ratings are rendered in the page HTML for SEO indexing.</p>
+    </footer>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
